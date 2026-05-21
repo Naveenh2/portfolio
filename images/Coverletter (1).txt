@@ -1,0 +1,14 @@
+Dear Hiring Manager,
+
+I am writing to express my interest in the Software Development role at your organization. I am currently pursuing my B.Tech and have completed certification training in MERN Stack Development, where I gained practical experience in building full-stack web applications using React.js, Node.js, Express.js, and SQL-based databases.
+
+Through my academic projects and mini-projects, I have developed a strong foundation in JavaScript, React, Node.js, and database management. I am familiar with developing RESTful APIs, writing clean and reusable code, and working with Git for version control. I have also explored CI/CD concepts using GitHub Actions and understand the importance of scalable and maintainable application development.
+
+I am particularly excited about this opportunity because it emphasizes collaboration, continuous learning, and mentorship from experienced engineers. I enjoy working in team environments, participating in problem-solving discussions, and learning best practices that improve both technical and professional growth.
+
+Additionally, I possess strong analytical and communication skills, attention to detail, and a growth mindset that helps me quickly adapt to new technologies and workflows. I am eager to contribute to your development team while continuously improving my skills in modern web technologies and microservices architecture.
+
+I would welcome the opportunity to discuss how my skills and enthusiasm align with your requirements. Thank you for considering my application. I look forward to hearing from you.
+
+Sincerely,
+Naveen Reddy

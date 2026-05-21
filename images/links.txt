@@ -1,0 +1,116 @@
+https://drive.google.com/file/d/1Dr51uyYNdmiIpF_rVhTndZuHeO1rPFP5/view?usp=sharing
+
+https://github.com/Naveenh2
+
+https://leetcode.com/u/pnrreddy84/
+
+
+
+https://naveentrenddyy.ccbp.tech/ (username:rahul,password:rahul@2021)
+
+https://prakashjobby1.ccbp.tech/(username:rahul,password:rahul@2021)
+
+
+  https://dev.prepdha.school/student/dashboard
+
+
+https://naveentodow.ccbp.tech/
+
+
+
+portfolio :https://portfolio-uqat.vercel.app/
+
+
+
+
+
+
+Worked as a Software Engineer Intern at Prepdha.ai, Madhapur, Hyderabad 
+(Feb 2026 – May 2026).
+
+- Developed and maintained web applications as a Frontend Developer 
+  using Next.js and React.js.
+
+- Engineered responsive UI components and integrated REST APIs, 
+  improving application performance by 50%.
+
+- Drove the successful launch of three B2B platform features for schools, 
+  enhancing usability and scalability with measurable improvements in 
+  user engagement and system efficiency.
+
+Tech Stack: Next.js, React Native, TypeScript, PostgreSQL, Prisma ORM, 
+Tailwind CSS
+
+
+
+
+
+
+
+
+Yes, I have hands-on experience in both frontend and backend development. I have worked with technologies like React.js, Next.js, Node.js, Express.js, and SQLite while building full-stack applications. I am comfortable developing responsive user interfaces, creating REST APIs, integrating frontend with backend services, and performing CRUD operations with databases. I have also worked on authentication, API integration, and state management in my projects and internship experience.
+
+
+
+
+
+
+
+cover letter 
+Dear Hiring Team,
+
+I am excited to apply for the Full Stack Development Intern role. I recently completed my B.Tech in Information Technology and have hands-on experience in frontend and backend development using technologies like React.js, Next.js, Node.js, Express.js, JavaScript, and SQLite.
+
+During my internship at Prepdha.ai, I worked on developing responsive UI components, integrating REST APIs, and improving application performance. I have also built several full-stack projects, including e-commerce, job portal, and school management applications, where I implemented authentication, CRUD operations, routing, and database integration.
+
+I am passionate about learning new technologies, solving real-world problems, and contributing effectively to development teams. I believe my technical skills, project experience, and eagerness to learn make me a strong candidate for this opportunity.
+
+Thank you for considering my application. I look forward to the opportunity to contribute and grow with your team.
+
+Best regards,
+Naveen Pasham
+
+
+
+
+
+
+
+
+
+why should we hire you:
+
+I am a Information Technology graduate with hands-on experience in full-stack development using Next.js, React.js, React Native, Node.js, TypeScript, and PostgreSQL. During my internship at Prepdha.ai, I built responsive UI components, integrated REST APIs, and shipped 3 B2B features for school platforms — improving app performance by 50%.
+I have built real-world projects including a School Management App, an e-commerce clone, and a job search application, all deployed and live. I am also certified by IIT Bombay and Cisco Networking Academy.
+I am immediately available, a quick learner, and genuinely passionate about building products that solve real problems. I would love to bring this energy and my technical skills to your team.
+
+
+
+
+Q1: Your tech stack for frontend, backend, and database
+
+Frontend: React.js, Next.js, TypeScript, Tailwind CSS, HTML, CSS
+Backend: Node.js, Express.js, REST APIs
+Database: PostgreSQL with Prisma ORM, also familiar with MongoDB and SQLite
+
+
+Q2: Securely execute user Python code without getting hacked
+This is a great technical question — here's a solid answer:
+
+I would never run user code directly on the main server. Instead, I'd use one of these approaches:
+First option — use an existing sandboxed execution API like Judge0 or Piston API, which are built exactly for this. They handle isolation, timeouts, and resource limits securely.
+Second option — if building in-house, I'd spin up an isolated Docker container per execution request with no internet access, read-only filesystem, strict CPU and memory limits (e.g. 256MB RAM, 5 second timeout), and a non-root user. After execution the container is destroyed immediately.
+Either way I'd also sanitize the code before sending, block dangerous imports like os, subprocess, and socket, and log all executions for monitoring.
+
+
+
+IRCTC Train Booking Portal — Built a full-stack e-ticketing web app using Django 5, Node.js/Express, SQLite, and JWT authentication. Implemented train search API proxy, session management, ticket booking with auto-generated PNR, booking cancellation, user dashboard with search history, public PNR lookup, Django admin, form validation, and unit tests.
+
+
+Have you worked with async Python or any AI/LLM APIs?
+Yes, during my internship at Prepdha.ai I worked on an OCR pipeline that integrated Google Vision API to process handwritten content. I used async calls to handle API requests efficiently without blocking the UI. While my primary stack is JavaScript/TypeScript, I have Python knowledge and have worked with NumPy and data science concepts through my coursework and Cisco certification.
+
+
+
+
+Yes, I am fully available to work 10 am – 7 pm as a full-time intern. I can dedicate 8–9 hours per day and am comfortable with the schedule.
