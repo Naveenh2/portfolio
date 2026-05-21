@@ -1,698 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Naveen Pasham — Software Engineer portfolio. Full-stack developer at Prepdha.ai, Hyderabad." />
-<meta property="og:title" content="Naveen Pasham — Software Engineer" />
-<meta property="og:image" content="images/profile.png" />
-<title>Naveen Pasham — Software Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #F7F6F2;
-    --surface: #FFFFFF;
-    --text: #1C1C1A;
-    --muted: #7A7A74;
-    --accent: #2B5C3F;
-    --accent-light: #EAF3E7;
-    --border: #E2E0D8;
-    --tag-bg: #EFEFEB;
-    --nav-h: 68px;
-    --radius: 12px;
-    --transition: 0.35s cubic-bezier(.4,0,.2,1);
-    --photo-focus-x: 24%;
-    --photo-focus-y: 26%;
-  }
-
-  html { scroll-behavior: smooth; font-size: 16px; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    height: var(--nav-h);
-    background: rgba(247,246,242,0.88);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 min(6vw, 80px);
-  }
-
-  .nav-logo {
-    font-family: 'Lora', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-  }
-
-  .nav-links {
-    display: flex; gap: 2rem; list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color var(--transition);
-  }
-
-  .nav-links a:hover { color: var(--accent); }
-
-  /* ── LAYOUT ── */
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 min(6vw, 60px);
-  }
-
-  section { padding: 100px 0; }
-
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-  }
-
-  .section-title {
-    font-family: 'Lora', serif;
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    margin-bottom: 3rem;
-  }
-
-  .divider {
-    width: 100%;
-    height: 1px;
-    background: var(--border);
-    margin: 0;
-  }
-
-  /* ── HERO ── */
-  #hero {
-    padding-top: calc(var(--nav-h) + 80px);
-    padding-bottom: 100px;
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-  }
-
-  .hero-text { flex: 1; }
-
-  .hero-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 0.6rem;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 28px; height: 1px;
-    background: var(--accent);
-  }
-
-  .hero-name {
-    font-family: 'Lora', serif;
-    font-size: clamp(2.8rem, 7vw, 4.5rem);
-    font-weight: 600;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    color: var(--text);
-    margin-bottom: 1.2rem;
-  }
-
-  .hero-role {
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--muted);
-    margin-bottom: 2rem;
-    line-height: 1.5;
-  }
-
-  .hero-role strong { color: var(--text); font-weight: 500; }
-
-  .hero-links {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.65rem 1.4rem;
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all var(--transition);
-    cursor: pointer;
-    border: none;
-  }
-
-  .btn-primary {
-    background: var(--accent);
-    color: #fff;
-  }
-
-  .btn-primary:hover { background: #1e4530; transform: translateY(-1px); }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--text);
-    border: 1px solid var(--border);
-  }
-
-  .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
-
-  .hero-photo {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-    border: 4px solid var(--surface);
-    box-shadow: 0 8px 32px rgba(43, 92, 63, 0.12), 0 0 0 1px var(--border);
-    background: var(--accent-light);
-    position: relative;
-  }
-
-  .hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: var(--photo-focus-x) var(--photo-focus-y);
-    transform: scale(3.1);
-    transform-origin: var(--photo-focus-x) var(--photo-focus-y);
-    display: block;
-  }
-
-  /* ── EXPERIENCE ── */
-  .exp-item {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 2rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .exp-item:last-child { border-bottom: none; }
-
-  .exp-date {
-    font-size: 0.8rem;
-    color: var(--muted);
-    padding-top: 0.25rem;
-    line-height: 1.6;
-  }
-
-  .exp-content h3 {
-    font-family: 'Lora', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.2rem;
-  }
-
-  .exp-company {
-    font-size: 0.9rem;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 0.8rem;
-    display: flex; align-items: center; gap: 0.4rem;
-  }
-
-  .exp-content ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .exp-content ul li {
-    font-size: 0.9rem;
-    color: #444;
-    padding: 0.25rem 0;
-    padding-left: 1rem;
-    position: relative;
-    line-height: 1.6;
-  }
-
-  .exp-content ul li::before {
-    content: '–';
-    position: absolute;
-    left: 0;
-    color: var(--muted);
-  }
-
-  /* ── PROJECTS ── */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .project-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.8rem;
-    transition: all var(--transition);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .project-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--transition);
-  }
-
-  .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.07); }
-  .project-card:hover::before { transform: scaleX(1); }
-
-  .project-card h3 {
-    font-family: 'Lora', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.6rem;
-    color: var(--text);
-  }
-
-  .project-card p {
-    font-size: 0.875rem;
-    color: var(--muted);
-    line-height: 1.65;
-    margin-bottom: 1.2rem;
-  }
-
-  .project-tags {
-    display: flex; flex-wrap: wrap; gap: 0.4rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .tag {
-    font-size: 0.72rem;
-    font-weight: 500;
-    padding: 0.25rem 0.7rem;
-    border-radius: 100px;
-    background: var(--tag-bg);
-    color: var(--muted);
-    letter-spacing: 0.02em;
-  }
-
-  .project-link {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--accent);
-    text-decoration: none;
-    display: inline-flex; align-items: center; gap: 0.3rem;
-    transition: gap var(--transition);
-  }
-
-  .project-link:hover { gap: 0.5rem; }
-
-  /* ── SKILLS ── */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-  }
-
-  .skill-group h4 {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .skill-tags {
-    display: flex; flex-wrap: wrap; gap: 0.4rem;
-  }
-
-  .skill-tag {
-    font-size: 0.8rem;
-    font-weight: 400;
-    padding: 0.3rem 0.8rem;
-    border-radius: 6px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text);
-    transition: all var(--transition);
-  }
-
-  .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* ── EDUCATION ── */
-  .edu-list { display: flex; flex-direction: column; gap: 0; }
-
-  .edu-item {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 2rem;
-    padding: 1.8rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .edu-item:last-child { border-bottom: none; }
-
-  .edu-year {
-    font-size: 0.8rem;
-    color: var(--muted);
-    padding-top: 0.2rem;
-  }
-
-  .edu-detail h3 {
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.2rem;
-  }
-
-  .edu-detail .school {
-    font-size: 0.875rem;
-    color: var(--muted);
-    margin-bottom: 0.3rem;
-  }
-
-  .edu-detail .grade {
-    display: inline-flex; align-items: center; gap: 0.3rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--accent);
-    background: var(--accent-light);
-    padding: 0.2rem 0.7rem;
-    border-radius: 100px;
-  }
-
-  /* ── CERTS ── */
-  .certs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.2rem;
-  }
-
-  .cert-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    display: flex; gap: 1rem;
-    align-items: flex-start;
-    transition: all var(--transition);
-  }
-
-  .cert-card:hover { border-color: var(--accent); }
-
-  .cert-icon {
-    width: 40px; height: 40px; border-radius: 10px;
-    background: var(--accent-light);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .cert-icon svg { color: var(--accent); }
-
-  .cert-card h4 {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.25rem;
-    line-height: 1.4;
-  }
-
-  .cert-card p {
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-
-  .achievement-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem 1.8rem;
-    border-left: 3px solid var(--accent);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    margin-bottom: 1rem;
-  }
-
-  .achievement-card h4 {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.4rem;
-  }
-
-  .achievement-card p {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
-  /* ── RESUME ── */
-  #resume { padding-top: 80px; }
-
-  .resume-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 2.5rem;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
-  }
-
-  .resume-header {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .resume-photo {
-    width: 140px;
-    height: 140px;
-    border-radius: 16px;
-    overflow: hidden;
-    flex-shrink: 0;
-    border: 3px solid var(--accent-light);
-    box-shadow: 0 4px 20px rgba(43, 92, 63, 0.1);
-  }
-
-  .resume-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: var(--photo-focus-x) var(--photo-focus-y);
-    transform: scale(2.1);
-    transform-origin: var(--photo-focus-x) var(--photo-focus-y);
-    display: block;
-  }
-
-  .resume-intro h3 {
-    font-family: 'Lora', serif;
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 0.35rem;
-    letter-spacing: -0.02em;
-  }
-
-  .resume-intro .resume-role {
-    font-size: 1rem;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 0.75rem;
-  }
-
-  .resume-contact {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.25rem;
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
-
-  .resume-contact a {
-    color: var(--muted);
-    text-decoration: none;
-    transition: color var(--transition);
-  }
-
-  .resume-contact a:hover { color: var(--accent); }
-
-  .resume-body h4 {
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-  }
-
-  .resume-body p,
-  .resume-body li {
-    font-size: 0.9rem;
-    color: #444;
-    line-height: 1.65;
-  }
-
-  .resume-body ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.75rem;
-  }
-
-  .resume-body ul li {
-    padding: 0.2rem 0 0.2rem 1rem;
-    position: relative;
-  }
-
-  .resume-body ul li::before {
-    content: '–';
-    position: absolute;
-    left: 0;
-    color: var(--muted);
-  }
-
-  .resume-actions {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  @media print {
-    nav, footer, .resume-actions, .divider,
-    #hero, #experience, #projects, #skills, #education, #certs, #contact,
-    #resume .section-label, #resume .section-title {
-      display: none !important;
-    }
-    body { background: #fff; }
-    .container { max-width: 100%; padding: 0 1rem; }
-    #resume { padding: 0.5rem 0 0; }
-    .resume-card {
-      border: none;
-      box-shadow: none;
-      padding: 0;
-    }
-    .resume-photo { width: 110px; height: 110px; }
-    .resume-photo img { transform: scale(1.7); }
-    .hero-photo img { transform: none; }
-  }
-
-  /* ── CONTACT ── */
-  #contact { padding-bottom: 120px; }
-
-  .contact-inner {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 3.5rem;
-    text-align: center;
-  }
-
-  .contact-inner h2 {
-    font-family: 'Lora', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: var(--text);
-  }
-
-  .contact-inner p {
-    color: var(--muted);
-    font-size: 1rem;
-    margin-bottom: 2.5rem;
-    max-width: 420px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .contact-links {
-    display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
-  }
-
-  .contact-pill {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.65rem 1.4rem;
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text);
-    background: var(--bg);
-    border: 1px solid var(--border);
-    text-decoration: none;
-    transition: all var(--transition);
-  }
-
-  .contact-pill:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
-  /* ── FOOTER ── */
-  footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.8rem;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-  }
-
-  /* ── ANIMATIONS ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 640px) {
-    #hero { flex-direction: column-reverse; align-items: center; gap: 2rem; text-align: center; }
-    .hero-text { width: 100%; }
-    .hero-eyebrow { justify-content: center; }
-    .hero-links { justify-content: center; }
-    .hero-photo { width: 180px; height: 180px; }
-    .resume-header { flex-direction: column; text-align: center; }
-    .resume-contact { justify-content: center; }
-    .exp-item, .edu-item { grid-template-columns: 1fr; gap: 0.5rem; }
-    .nav-links { display: none; }
-    .contact-inner { padding: 2rem 1.5rem; }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Naveen Pasham — Software Engineer portfolio. Full-stack developer at Prepdha.ai, Hyderabad." />
+  <meta property="og:title" content="Naveen Pasham — Software Engineer" />
+  <meta property="og:image" content="images/photo1.jpg" />
+  <title>Naveen Pasham — Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -709,35 +25,47 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="container">
+<main class="page-shell">
+
+<!-- HERO -->
   <section id="hero">
-    <div class="hero-text reveal">
-      <div class="hero-eyebrow">Software Engineer</div>
-      <h1 class="hero-name">Naveen<br>Pasham</h1>
-      <p class="hero-role">
-        Building <strong>scalable web & mobile products</strong> with Next.js, React Native, and TypeScript. Currently at Prepdha.ai, Hyderabad.
-      </p>
-      <div class="hero-links">
-        <a href="mailto:pnrreddy84@gmail.com" class="btn btn-primary">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          Say Hello
-        </a>
-        <a href="https://github.com/Naveenh2" target="_blank" class="btn btn-outline">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/naveenred/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
-        <a href="#resume" class="btn btn-outline">Resume ↓</a>
+    <div class="hero-card reveal">
+      <div class="hero-photo">
+        <img src="images/photo1.jpg" alt="Naveen Pasham — Software Engineer" width="260" height="260" loading="eager" />
+      </div>
+      <div class="hero-text">
+        <div class="hero-eyebrow">Software Engineer Intern</div>
+        <h1 class="hero-name">Naveen<br>Pasham</h1>
+        <p class="hero-role">
+          Building <strong>scalable web & mobile products</strong> with Next.js, React Native, and TypeScript. Currently at Prepdha.ai, Hyderabad.
+        </p>
+        <p class="hero-location">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-4.35 7-10a7 7 0 0 0-14 0c0 5.65 7 10 7 10Z"/><circle cx="12" cy="11" r="2"/></svg>
+          Hyderabad, India
+        </p>
+        <div class="hero-links">
+          <a href="mailto:pnrreddy84@gmail.com" class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+            Email Me
+          </a>
+          <a href="https://github.com/Naveenh2" target="_blank" rel="noopener" class="btn btn-outline btn-icon btn-github">
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.86 2.805 1.335 3.495 1.02.105-.78.42-1.335.765-1.64-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A8.34 8.34 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/naveenred/" target="_blank" rel="noopener" class="btn btn-outline btn-icon btn-linkedin">
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="#resume" class="btn btn-outline btn-icon btn-small">Resume ↓</a>
+        </div>
       </div>
     </div>
-    <div class="hero-photo reveal">
-      <img src="images/profile.png" alt="Naveen Pasham — Software Engineer" width="260" height="260" loading="eager" />
-    </div>
   </section>
-</div>
 
 <div class="divider"></div>
 
 <!-- EXPERIENCE -->
-<div class="container">
   <section id="experience">
     <p class="section-label reveal">Career</p>
     <h2 class="section-title reveal">Work Experience</h2>
@@ -758,12 +86,10 @@
       </div>
     </div>
   </section>
-</div>
 
 <div class="divider"></div>
 
 <!-- PROJECTS -->
-<div class="container">
   <section id="projects">
     <p class="section-label reveal">Work</p>
     <h2 class="section-title reveal">Projects</h2>
@@ -776,7 +102,7 @@
         <div class="project-tags">
           <span class="tag">Next.js</span><span class="tag">React Native</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Prisma ORM</span><span class="tag">Tailwind CSS</span>
         </div>
-        <a href="https://dev.prepdha.school/student/dashboard" target="_blank" class="project-link">View Live →</a>
+        <a href="https://dev.prepdha.school/student/dashboard" target="_blank" rel="noopener" class="project-link">View Live →</a>
       </div>
 
       <div class="project-card reveal">
@@ -785,7 +111,7 @@
         <div class="project-tags">
           <span class="tag">React.js</span><span class="tag">JWT</span><span class="tag">REST API</span><span class="tag">React Router</span><span class="tag">Local Storage</span>
         </div>
-        <a href="https://naveentrenddyy.ccbp.tech" target="_blank" class="project-link">View Live →</a>
+        <a href="https://naveentrenddyy.ccbp.tech" target="_blank" rel="noopener" class="project-link">View Live →</a>
       </div>
 
       <div class="project-card reveal">
@@ -794,7 +120,7 @@
         <div class="project-tags">
           <span class="tag">React.js</span><span class="tag">JWT Auth</span><span class="tag">REST API</span><span class="tag">React Router</span><span class="tag">Bootstrap</span>
         </div>
-        <a href="https://prakashjobby1.ccbp.tech" target="_blank" class="project-link">View Live →</a>
+        <a href="https://prakashjobby1.ccbp.tech" target="_blank" rel="noopener" class="project-link">View Live →</a>
       </div>
 
       <div class="project-card reveal">
@@ -803,92 +129,42 @@
         <div class="project-tags">
           <span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span><span class="tag">Local Storage</span>
         </div>
-        <a href="https://naveentodow.ccbp.tech" target="_blank" class="project-link">View Live →</a>
+        <a href="https://naveentodow.ccbp.tech" target="_blank" rel="noopener" class="project-link">View Live →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <h3>Peblo Notes — AI Workspace</h3>
+        <p>Full-stack AI-powered notes platform with smart summaries, action-item extraction, public share/revoke links, real-time sync via Socket.io, and an insights dashboard. JWT stored in httpOnly cookies via a Next.js BFF to avoid cross-origin leakage.</p>
+        <div class="project-tags">
+          <span class="tag">Next.js 15</span><span class="tag">TypeScript</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">Prisma</span><span class="tag">Google Gemini</span><span class="tag">Socket.io</span><span class="tag">JWT</span>
+        </div>
+        <a href="https://github.com/Naveenh2" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <h3>PrimeTrade — Task Manager</h3>
+        <p>Production-ready task management system with JWT auth, role-based access control (Admin/User), paginated REST API with Swagger docs, Zod validation, rate limiting, and a Next.js 15 dashboard. Fully containerised with Docker Compose and deployed on Render + Vercel.</p>
+        <div class="project-tags">
+          <span class="tag">Next.js 15</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">Prisma</span><span class="tag">JWT / RBAC</span><span class="tag">Docker</span><span class="tag">Swagger</span><span class="tag">Zustand</span>
+        </div>
+        <a href="https://github.com/Naveenh2" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
       </div>
 
     </div>
   </section>
-</div>
 
 <div class="divider"></div>
 
-<!-- SKILLS -->
-<div class="container">
+<!-- SKILLS (grouped tags + icons via js/icons.js + js/skills.js) -->
   <section id="skills">
     <p class="section-label reveal">Capabilities</p>
     <h2 class="section-title reveal">Skills</h2>
-
-    <div class="skills-grid">
-      <div class="skill-group reveal">
-        <h4>Frontend</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">React.js</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Tailwind CSS</span>
-          <span class="skill-tag">HTML</span>
-          <span class="skill-tag">CSS</span>
-          <span class="skill-tag">Bootstrap</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <h4>Mobile</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">React Native</span>
-          <span class="skill-tag">Android App Dev</span>
-          <span class="skill-tag">Mobile UI Design</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <h4>Backend & DB</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Express</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">Prisma ORM</span>
-          <span class="skill-tag">SQLite</span>
-          <span class="skill-tag">REST APIs</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <h4>Languages</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">C++</span>
-          <span class="skill-tag">PHP</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <h4>Tools & Concepts</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">API Testing</span>
-          <span class="skill-tag">DSA</span>
-          <span class="skill-tag">OOP</span>
-          <span class="skill-tag">Data Science</span>
-          <span class="skill-tag">AI / ML</span>
-          <span class="skill-tag">IoT</span>
-        </div>
-      </div>
-      <div class="skill-group reveal">
-        <h4>Soft Skills</h4>
-        <div class="skill-tags">
-          <span class="skill-tag">Leadership</span>
-          <span class="skill-tag">Communication</span>
-          <span class="skill-tag">Problem-solving</span>
-        </div>
-      </div>
-    </div>
+    <div id="skills-grid-root"><p class="skills-loading">Loading...</p></div>
   </section>
-</div>
 
 <div class="divider"></div>
 
 <!-- EDUCATION -->
-<div class="container">
   <section id="education">
     <p class="section-label reveal">Background</p>
     <h2 class="section-title reveal">Education</h2>
@@ -927,12 +203,10 @@
       </div>
     </div>
   </section>
-</div>
 
 <div class="divider"></div>
 
 <!-- CERTS & ACHIEVEMENTS -->
-<div class="container">
   <section id="certs">
     <p class="section-label reveal">Recognition</p>
     <h2 class="section-title reveal">Certificates & Achievements</h2>
@@ -963,12 +237,10 @@
       <p>Led the planning and execution of a programming hackathon for junior students — developed problem statements, coordinated participants, supervised logistics, and mentored teams throughout the competition, resulting in successful event completion and positive feedback.</p>
     </div>
   </section>
-</div>
 
 <div class="divider"></div>
 
 <!-- RESUME -->
-<div class="container">
   <section id="resume">
     <p class="section-label reveal">Resume</p>
     <h2 class="section-title reveal">Professional Summary</h2>
@@ -976,17 +248,32 @@
     <article class="resume-card reveal">
       <header class="resume-header">
         <div class="resume-photo">
-          <img src="images/profile.png" alt="Naveen Pasham profile photo" width="140" height="140" loading="lazy" />
+          <img src="images/photo1.jpg" alt="Naveen Pasham profile photo" width="140" height="140" loading="lazy" />
         </div>
         <div class="resume-intro">
           <h3>Naveen Pasham</h3>
           <p class="resume-role">Software Engineer · Full-Stack Developer</p>
           <div class="resume-contact">
-            <a href="mailto:pnrreddy84@gmail.com">pnrreddy84@gmail.com</a>
-            <a href="tel:+916303001711">+91 6303 001 711</a>
-            <a href="https://github.com/Naveenh2" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://www.linkedin.com/in/naveenred/" target="_blank" rel="noopener">LinkedIn</a>
-            <span>Hyderabad, India</span>
+            <a href="mailto:pnrreddy84@gmail.com" class="resume-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+              <span>pnrreddy84@gmail.com</span>
+            </a>
+            <a href="tel:+916303001711" class="resume-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.68h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.72-.72a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.7 17z"/></svg>
+              <span>+91 6303 001 711</span>
+            </a>
+            <a href="https://github.com/Naveenh2" target="_blank" rel="noopener" class="resume-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.86 2.805 1.335 3.495 1.02.105-.78.42-1.335.765-1.64-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A8.34 8.34 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/naveenred/" target="_blank" rel="noopener" class="resume-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <span class="resume-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-4.35 7-10a7 7 0 0 0-14 0c0 5.65 7 10 7 10Z"/><circle cx="12" cy="11" r="2"/></svg>
+              <span>Hyderabad, India</span>
+            </span>
           </div>
         </div>
       </header>
@@ -1016,7 +303,7 @@
       </div>
 
       <div class="resume-actions">
-        <button type="button" class="btn btn-primary" onclick="window.print()">
+        <button type="button" class="btn btn-primary" data-action="print">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           Print / Save as PDF
         </button>
@@ -1024,12 +311,10 @@
       </div>
     </article>
   </section>
-</div>
 
 <div class="divider"></div>
 
 <!-- CONTACT -->
-<div class="container">
   <section id="contact">
     <div class="contact-inner reveal">
       <h2>Let's work together</h2>
@@ -1054,24 +339,18 @@
       </div>
     </div>
   </section>
+
+</main>
 </div>
 
 <footer>
   <p>Designed & built by Naveen Pasham · Hyderabad, India · 2026</p>
 </footer>
 
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 60);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-</script>
+<script src="js/icons.js"></script>
+<script src="js/skills.js"></script>
+<script src="js/button-loading.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
